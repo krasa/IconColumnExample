@@ -23,6 +23,7 @@ public class Dialog {
 			{
 				new TreeColumnInfo(""),
 				new ButtonColumnInfo("foo"),
+				new IconColumnWithListener("foo"),
 				new IconColumn("bar"),
 			};
 
