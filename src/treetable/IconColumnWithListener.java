@@ -80,9 +80,9 @@ public class IconColumnWithListener extends com.intellij.util.ui.ColumnInfo<MyTr
 
 					String columnName = myTable.getColumnName(col);
 					if (columnName.equals(myColumnName)) {
-						MyTreeNode node = (MyTreeNode) myTable.getModel().getValueAt(row, col);
-						if (node != null) {
-
+						Object value = myTable.getModel().getValueAt(row, col);
+						if (value instanceof MyTreeNode) {
+							MyTreeNode node = (MyTreeNode) value;
 							node.setValue(!node.isValue());
 
 							myTable.repaint(myTable.getCellRect(row, col, false));
